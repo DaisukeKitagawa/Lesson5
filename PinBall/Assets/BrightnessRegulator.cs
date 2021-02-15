@@ -51,7 +51,7 @@ public class BrightnessRegulator : MonoBehaviour
             Color emissionColor = this.defaultColor * (this.minEmission + Mathf.Sin(this.degree * Mathf.Deg2Rad) * this.magEmission);
 
             //エミッションに色を設定する
-            myMaterial.SetColor("_Emission", emissionColor);
+            myMaterial.SetColor("_EmissionColor", emissionColor);
 
             //現在の角度を小さくする
             this.degree -= this.speed;
@@ -59,7 +59,7 @@ public class BrightnessRegulator : MonoBehaviour
     }
 
     //衝突時に呼ばれる関数
-    void OnCollissionEnter(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         //角度を180に設定
         this.degree = 180;
